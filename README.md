@@ -19,12 +19,13 @@ The datasets used are random points on a plane in the squares (i*2+1,j*2+1)-(i*2
 *Vector[Point] centroids;
 mapper setup:
   read centroids from the distributed cache*
-  
-***map ( key, line ):**
+
+**map ( key, line ):**
   Point p = new Point()
   read 2 double numbers from the line (x and y) and store them in p
   find the closest centroid c to p
   emit(c,p)
+  
 **reduce ( c, points ):**
   count = 0
   sx = sy = 0.0
